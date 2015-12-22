@@ -121,4 +121,4 @@ BUILD_KERNEL := true
 include device/qcom/aosp-sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    device/sony/shinano/sepolicy
+    device/sony/shinano-common/sepolicy
