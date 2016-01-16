@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     NfcNci \
     Tag \
-    nfc_nci.$(TARGET_DEVICE)
+    nfc_nci.msm8974
 
 # GPS
 PRODUCT_PACKAGES += \
