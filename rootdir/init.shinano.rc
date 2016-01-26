@@ -54,6 +54,10 @@ on post-fs-data
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
 
+    # Create a folder for audio delta files
+    mkdir /data/audio/acdbdata 0770 media audio
+    mkdir /data/audio/acdbdata/delta 0770 media audio
+
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
@@ -82,11 +86,7 @@ on post-fs-data
     mkdir /data/misc/camera 0770 camera camera
 
     # Sensors
-    mkdir /data/system 0775 system system
-    mkdir /data/system/sensors 0775 system system
     mkdir /data/misc/sensors 0775 system system
-    write /data/system/sensors/settings 1
-    chmod 664 /data/system/sensors/settings
 
     setprop vold.post_fs_data_done 1
 
@@ -312,6 +312,18 @@ on property:ro.boot.baseband=apq
 on property:ro.boot.baseband=msm
     start qmuxd
     start netmgrd
+
+on property:persist.radio.multisim.config=dsds
+    start ril-daemon2
+
+service ril-daemon2 /system/bin/rild -c 2
+    class main
+    socket rild2 stream 660 root radio
+    socket sap_uim_socket2 stream 660 bluetooth bluetooth
+    socket rild2-debug stream 660 radio system
+    user root
+    disabled
+    group radio cache inet misc audio log
 
 # QCOM prop
 service qmuxd /system/vendor/bin/qmuxd

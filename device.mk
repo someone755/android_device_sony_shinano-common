@@ -132,8 +132,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     NfcNci \
-    Tag \
-    nfc_nci.msm8974
+    Tag
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -156,6 +155,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libmmcamera_interface \
     libmmjpeg_interface \
+    libmm-qcamera \
     libqomx_core \
     camera.msm8974
 
