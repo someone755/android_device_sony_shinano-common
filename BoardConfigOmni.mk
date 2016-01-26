@@ -18,9 +18,6 @@ BOARD_CUSTOM_BOOTIMG_MK := device/sony/shinano-common/boot/custombootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_DTB_EXTRA_FLAGS := --force-v2
 
-# NFC
-BOARD_NFC_HAL_SUFFIX := msm8974
-
 # VIDC
 BOARD_HAS_VIDC_OPERATING_RATE := false
 BOARD_HAS_VIDC_INSTANCE_PRIORITY := false
