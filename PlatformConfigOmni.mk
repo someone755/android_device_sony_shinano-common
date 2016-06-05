@@ -15,6 +15,9 @@
 # Common
 include device/sony/shinano-common/PlatformConfig.mk
 
+# Bootdevice 
+BOARD_KERNEL_CMDLINE += androidboot.bootdevice=msm_sdcc.1
+
 # Custom Boot Image
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/common/boot/custombootimg.mk
